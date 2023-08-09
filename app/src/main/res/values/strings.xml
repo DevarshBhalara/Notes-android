@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Notes-android</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="bg">BG</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="login_with_google">Continue with Google</string>
+    <string name="are_you_new_user">Are you new User ?</string>
+    <string name="registration">Registration</string>
+    <string name="conform_password">Conform Password</string>
+    <string name="create_new_account">Create New Account</string>
+    <string name="create_new_account_with_google">Create new Account with Google</string>
+    <string name="already_have_an_account">Already have an Account ?</string>
 </resources>

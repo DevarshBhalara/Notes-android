@@ -2,15 +2,15 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/fragmentLogin"
+    app:startDestination="@id/fragmentHome"
     android:id="@+id/nav_graph.xml">
 
     <fragment
-        android:id="@+id/fragmentLogin"
-        android:name="com.example.notes_android.ui.fragment.LoginFragment"
-        tools:layout="@layout/fragment_login"
-        />
+        android:name="com.example.notes_android.ui.fragment.HomeFragment"
+        tools:layout="@layout/fragment_home"
+        android:label="@string/notes"
+        android:id="@+id/fragmentHome">
 
-
+    </fragment>
 
 </navigation>

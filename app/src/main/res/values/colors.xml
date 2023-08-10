@@ -5,4 +5,5 @@
 
     <color name="white65"> #90FFFFFF </color>
     <color name="red">#90FF0000</color>
+    <color name="bgGrey">#DCDCDC</color>
 </resources>

@@ -14,4 +14,8 @@
     <string name="create_new_account_with_google">Create new Account with Google</string>
     <string name="already_have_an_account">Already have an Account ?</string>
     <string name="notes">Notes</string>
+    <string name="add_note">Add Note</string>
+    <string name="title">Title</string>
+    <string name="subtitle">Subtitle</string>
+    <string name="add">Add</string>
 </resources>

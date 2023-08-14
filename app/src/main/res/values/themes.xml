@@ -1,10 +1,30 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Base.Theme.Notesandroid" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="colorAccent">#B5FFEB3B</item>
+        <item name="myColor">#FFEB3B</item>
+        <item name="colorOnBackground">#F8F8F8</item>
+        <item name="colorSurface">#F8F8F8</item>
+        <item name="colorOnPrimary">#000000</item>
+        <item name="navIcon">#000000</item>
     </style>
 
     <style name="Theme.Notesandroid" parent="Base.Theme.Notesandroid" />
+
+    <style name="textTitle" parent="Base.Theme.Notesandroid">
+        <item name="android:padding"> @dimen/_16dp </item>
+        <item name="android:textSize"> @dimen/_20sp </item>
+        <item name="android:textStyle"> bold </item>
+        <item name="android:textColor"> @color/black </item>
+
+    </style>
+
+    <style name="textSubtitle" parent="Base.Theme.Notesandroid">
+        <item name="android:padding"> @dimen/_16dp </item>
+        <item name="android:textSize"> @dimen/_14sp </item>
+        <item name="android:textColor"> @color/black </item>
+    </style>
+
 </resources>

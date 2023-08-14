@@ -6,45 +6,43 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/home_bg"
         tools:context=".ui.activity.HomeActivity">
 
-        <androidx.coordinatorlayout.widget.CoordinatorLayout
-            android:id="@+id/coordinatorLayout"
-            android:layout_width="@dimen/_0dp"
-            android:layout_height="@dimen/_0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:background="@android:color/transparent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:context=".ui.activity.MainActivity">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#50FFFFFF"
+            />
 
             <com.google.android.material.appbar.AppBarLayout
                 android:id="@+id/appbarLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/transparent">
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="?attr/myColor">
 
                 <com.google.android.material.appbar.MaterialToolbar
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="?actionBarSize"
                     android:layout_gravity="top"
-                    android:background="@android:color/transparent"
+                    app:titleTextColor="@color/black"
                     app:layout_scrollFlags="scroll|enterAlways" />
 
             </com.google.android.material.appbar.AppBarLayout>
 
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/hostFragmentContainer"
+                app:layout_goneMarginTop="@dimen/_56dp"
                 android:name="androidx.navigation.fragment.NavHostFragment"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="0dp"
                 app:defaultNavHost="true"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/appbarLayout"
                 app:navGraph="@navigation/nav_graph" />
 
-        </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

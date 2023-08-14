@@ -1,7 +1,7 @@
 package com.example.notes_android.di
 
-import android.util.Log
 import com.example.notes_android.data.Utility
+import com.example.notes_android.ui.repository.AddNoteRepository
 import com.example.notes_android.ui.repository.CreateUserRepository
 import com.example.notes_android.ui.repository.HomeRepository
 import com.example.notes_android.ui.repository.LoginRepository
@@ -44,5 +44,11 @@ object AppModule {
     fun provideHomeRepository(
         collectionReference: CollectionReference
     ): HomeRepository = HomeRepository(collectionReference)
+
+    @Provides
+    @Singleton
+    fun provideAddNoteRepository(
+        collectionReference: CollectionReference
+    ): AddNoteRepository = AddNoteRepository(collectionReference)
 
 }

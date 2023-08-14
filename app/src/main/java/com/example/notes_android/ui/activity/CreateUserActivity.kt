@@ -11,13 +11,10 @@ import androidx.lifecycle.lifecycleScope
 import com.example.notes_android.R
 import com.example.notes_android.databinding.ActivityCreateUserBinding
 import com.example.notes_android.ui.viewmodel.CreateUserViewModel
-import com.google.android.gms.auth.api.Auth
-import com.google.android.gms.auth.api.identity.BeginSignInRequest
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
-import com.google.android.gms.common.api.GoogleApiClient
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
@@ -31,13 +28,9 @@ class CreateUserActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCreateUserBinding
     private val viewModel: CreateUserViewModel by viewModels()
-    private var isSuccess = false
     private var firebaseAuth = FirebaseAuth.getInstance()
 
-    private lateinit var googleApiClient: GoogleApiClient
-    private lateinit var googleSignInLauncher: ActivityResultLauncher<Intent>
     private val REQ_ONE_TAP = 2  // Can be any integer unique to the Activity
-    private var showOneTapUI = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -132,7 +125,7 @@ class CreateUserActivity : AppCompatActivity() {
             val account = task.getResult(ApiException::class.java)
             firebaseAuthWithGoogle(account)
         } catch (e: Exception) {
-            e.localizedMessage?.let { Log.d("e", it.toString()) }
+            e.localizedMessage?.let { Log.d("e", it) }
         }
     }
 
@@ -141,8 +134,10 @@ class CreateUserActivity : AppCompatActivity() {
         firebaseAuth.signInWithCredential(credential).addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 Log.d("FirebaseAuth", "signInWithCredential:success")
-                val user = firebaseAuth.currentUser
-                // Handle successful sign-in
+                val intent = Intent(applicationContext, HomeActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+                startActivity(intent)
+                finish()
             } else {
                 Log.w("FirebaseAuth", "signInWithCredential:failure", task.exception)
             }

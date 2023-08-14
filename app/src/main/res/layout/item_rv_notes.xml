@@ -12,11 +12,13 @@
         android:layout_width="match_parent"
         android:layout_margin="@dimen/_8dp"
         app:cardCornerRadius="@dimen/_8dp"
+        app:cardBackgroundColor="?attr/colorSurface"
         android:layout_height="wrap_content">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@android:color/transparent"
             android:padding="@dimen/_8dp"
             >
 
@@ -28,7 +30,7 @@
                 android:textSize="@dimen/_20sp"
                 tools:text="Title"
                 android:text="@{ note.title }"
-                android:textColor="@color/black"
+                android:textColor="?attr/colorOnPrimary"
                 android:textStyle="bold"
                 />
             <TextView

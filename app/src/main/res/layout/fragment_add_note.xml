@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <data>
+        <variable
+            name="note"
+            type="com.example.notes_android.data.Note" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".ui.fragment.AddNoteFragment">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:hint="@string/title"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColorHint="@color/black"
+            android:text="@{ note.title }"
+            android:padding="@dimen/_16dp"
+            style="@style/textTitle"
+            android:textColor="?attr/colorOnPrimary"
+            android:background="@android:color/transparent" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/subTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            android:hint="@string/subtitle"
+            android:text="@{ note.content }"
+            android:textColor="?attr/colorOnPrimary"
+            android:padding="@dimen/_16dp"
+            android:textColorHint="@color/black"
+            style="@style/textSubtitle"
+            android:background="@android:color/transparent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

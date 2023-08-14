@@ -11,6 +11,25 @@
         android:label="@string/notes"
         android:id="@+id/fragmentHome">
 
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentAddNote"
+            app:destination="@id/fragmentAddNote" />
+    </fragment>
+
+    <fragment
+        android:name="com.example.notes_android.ui.fragment.AddNoteFragment"
+        tools:layout="@layout/fragment_add_note"
+        android:id="@+id/fragmentAddNote"
+        android:label="@string/add_note" >
+        <argument
+            android:name="note"
+            app:nullable="true"
+            app:argType=".data.Note" />
+
+        <argument
+            android:name="id"
+            app:nullable="true"
+            app:argType="string" />
     </fragment>
 
 </navigation>
